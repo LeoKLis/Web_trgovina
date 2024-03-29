@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Zaglavlje */
+header {
+    margin: 0;
+    padding: 0 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#kategorija {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+#logo>img {
+    max-width: 15vw;
+    min-width: 10vw;
+}
+
+#cart>img {
+    max-width: 5vw;
+    min-width: 2vw;
+}
+
+/* Navigacija */
+@media screen and (max-width: 1024px){
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav>ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border: 1px solid #555;
+    }
+    
+    nav>ul>li {
+        padding: 14px 16px;
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+
+    nav>ul>li:last-child {
+        border-bottom: none;
+    }
+    
+    nav>ul>li:hover {
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav>ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav>ul>li {
+        float: left;
+        padding: 14px 16px;
+    }
+    
+    nav>ul>li:hover {
+        cursor: pointer;
+    }
+}
