@@ -6,7 +6,8 @@
 /* Zaglavlje */
 header {
     margin: 0;
-    padding: 0 5vw;
+    padding-left: 3vw;
+    padding-right: 4vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -20,16 +21,69 @@ header {
 }
 
 #logo>img {
-    max-width: 15vw;
-    min-width: 10vw;
+    width: 80px;
 }
 
-#cart>img {
-    max-width: 5vw;
-    min-width: 2vw;
+#cart>a {
+    display: flex;
+    align-items: center;
 }
 
-/* Navigacija */
+#cart img {
+    width: 40px;
+    margin: 5px;
+}
+
+#cart a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Zaglavlje mobiteli */
+@media screen and (max-width: 1024px) {
+    header {
+        margin: 0;
+        padding-left: 3vw;
+        padding-right: 4vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #kategorija {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: xx-large;
+        font-weight: 500;
+    }
+    
+    #logo>img {
+        width: 60px;
+    }
+    
+    #cart>a {
+        display: flex;
+        align-items: center;
+    }
+    
+    #cart img {
+        width: 30px;
+        margin: 5px;
+    }
+    
+    #cart a {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+}
+
+/* Navigacija mobiteli */
 @media screen and (max-width: 1024px){
     nav {
         display: flex;
@@ -47,6 +101,7 @@ header {
     }
     
     nav>ul>li {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         padding: 14px 16px;
         text-align: center;
         border-bottom: 1px solid #555;
@@ -61,6 +116,7 @@ header {
     }
 }
 
+/* Navigacija tableti i srednji zasloni */
 @media screen and (min-width: 1024px) {
     nav {
         display: flex;
@@ -74,6 +130,7 @@ header {
     }
     
     nav>ul>li {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         float: left;
         padding: 14px 16px;
     }
@@ -81,4 +138,61 @@ header {
     nav>ul>li:hover {
         cursor: pointer;
     }
+}
+
+/* Navigacija veliki zasloni */
+@media screen and (min-width: 1500px) {
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav>ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav>ul>li {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        float: left;
+        padding: 14px 16px;
+        margin: 0 10px 0 10px;
+    }
+    
+    nav>ul>li:hover {
+        cursor: pointer;
+    }
+}
+
+
+/* Transparent */
+#transparent>img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer>ul>li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: small;
+    float: left;
+    margin: 0 10px 0 10px;
+    padding: 14px 16px;
+}
+
+footer>ul>li:hover {
+    cursor: pointer;
 }
