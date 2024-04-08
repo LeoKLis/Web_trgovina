@@ -44,8 +44,8 @@ header {
 @media screen and (max-width: 1024px) {
     header {
         margin: 0;
-        padding-left: 3vw;
-        padding-right: 4vw;
+        padding: 0;
+        
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -59,6 +59,8 @@ header {
     }
     
     #logo>img {
+        padding-left: 3vw;
+        padding-right: 3vw;
         width: 60px;
     }
     
@@ -73,6 +75,7 @@ header {
     }
     
     #cart a {
+        padding-right: 4vw;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         text-decoration: none;
         color: inherit;
@@ -85,14 +88,25 @@ header {
 
 /* Navigacija mobiteli */
 @media screen and (max-width: 1024px){
-    nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+    nav#top_nav {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        position: relative;
+    }
+
+    nav#top_nav img#hamburger {
+        margin: 3px 0 3px 0;
+        padding: 0 10px 0 10px;
+        position: relative;
+        left: 100%;
+        transform: translate(-100%, 0%);
+        width: 30px;
+        height: 30px;
     }
 
     nav>ul {
+        display: none;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -118,6 +132,10 @@ header {
 
 /* Navigacija tableti i srednji zasloni */
 @media screen and (min-width: 1024px) {
+    #top_nav img#hamburger {
+        display: none;
+    }
+
     nav {
         display: flex;
         justify-content: center;
@@ -142,9 +160,14 @@ header {
 
 /* Navigacija veliki zasloni */
 @media screen and (min-width: 1500px) {
+    #top_nav img#hamburger {
+        display: none;
+    }
+
     nav {
         display: flex;
         justify-content: center;
+        background-color: rgb(235, 235, 235);
     }
     
     nav>ul {
@@ -167,16 +190,33 @@ header {
 
 
 /* Transparent */
+#transparent {
+    position: relative;
+}
+
 #transparent>img {
+    opacity: 80%;
     width: 100%;
     height: 250px;
     object-fit: cover;
+}
+
+#pozdrav {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: aliceblue;
+    font-size: xx-large;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Footer */
 footer {
     display: flex;
     justify-content: center;
+    background-color: rgb(235, 235, 235);
 }
 
 footer>ul {
