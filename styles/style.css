@@ -14,7 +14,7 @@ header {
     align-items: center;
 }
 
-#kategorija {
+#kategorija_head {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: xx-large;
     font-weight: 500;
@@ -93,6 +93,7 @@ header {
         /* flex-direction: column; */
         /* align-items: center; */
         position: relative;
+        background-color: rgb(235, 235, 235);
     }
 
     nav#top_nav img#hamburger {
@@ -139,6 +140,7 @@ header {
     nav {
         display: flex;
         justify-content: center;
+        background-color: rgb(235, 235, 235);
     }
     
     nav>ul {
@@ -210,6 +212,36 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Proizvodi */
+#proizvodi {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    
+    align-content: flex-start;
+    padding: 0 10px 0 10px;
+}
+
+.kartica {
+    background-color: aliceblue;
+    margin: 5px 5px 5px 5px;
+    padding: 3px 3px 3px 3px;
+}
+
+.kartica img {
+    width: 10%;
+}
+
+.kartica .ime {
+    display: block;
+    width: 10px;
+}
+.kartica .kategorija {
+    display: block;
+    width: 10px;
 }
 
 /* Footer */
