@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="module" src="scripts/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
@@ -9,54 +10,38 @@
 <body>
     <header>
         <div id="logo"><img src="images/logo640.png" alt="Logo sa slikom planine"></div>
-        <div id="kategorija_head">TRCANJE</div>
-        <div id="cart"><a href="cart.html"><img src="images/shopping-cart-icon64.png"alt="Shopping cart icon">Kosarica</a></div>
+        <div id="kategorija_head">SLOBODNO VRIJEME</div>
+        <div id="cart"><a href="cart.html"><img src="images/shopping-cart-icon64.png"alt="Shopping cart icon">Kosarica<div class="dot_sum"></div></a></div>
     </header>
     <nav id="top_nav">
         <img id="hamburger" src="images/icons8-hamburger-menu-50.png" alt="Hamburger meni" onclick="show_nav()">
         <ul id="nav_links">
-            <li>Slobodno vrijeme</li>
-            <li>Trcanje</li>
-            <li>Hodanje</li>
-            <li>Nogomet</li>
-            <li>Futsal</li>
-            <li>Kosarka</li>
-            <li>Tenis</li>
-            <li>Rukomet</li>
-            <li>Odbojka</li>
-            <li>Boks</li>
+            <li id="slobVr">Slobodno vrijeme</li>
+            <li id="trc">Trcanje</li>
+            <li id="hod">Hodanje</li>
+            <li id="nog">Nogomet</li>
+            <li id="fut">Futsal</li>
+            <li id="kos">Kosarka</li>
+            <li id="ten">Tenis</li>
+            <li id="ruk">Rukomet</li>
+            <li id="odb">Odbojka</li>
+            <li id="boks">Boks</li>
         </ul>
     </nav>
-    <div id="sadrzaj" style="background-color: cornflowerblue;">
+    <div id="sadrzaj">
         <div id="transparent">
             <img src="images/pexels-ray-piedra-1476209.jpg" alt="Transparent slika">
             <div id="pozdrav">Dobrodosli</div>
         </div>
         <div id="proizvodi">
             <div class="kartica">
-                <img src="images/kopacka1.png" alt="Proizvod">
-                <div class="ime">Naziv</div>
-                <div class="kategorija">Kategorija</div>
-            </div>
-            <div class="kartica">
-                <img src="images/kopacka1.png" alt="Proizvod">
-                <div class="ime">Naziv</div>
-                <div class="kategorija">Kategorija</div>
-            </div>
-            <div class="kartica">
-                <img src="images/kopacka1.png" alt="Proizvod">
-                <div class="ime">Naziv</div>
-                <div class="kategorija">Kategorija</div>
-            </div>
-            <div class="kartica">
-                <img src="images/kopacka1.png" alt="Proizvod">
-                <div class="ime">Naziv</div>
-                <div class="kategorija">Kategorija</div>
-            </div>
-            <div class="kartica">
-                <img src="images/kopacka1.png" alt="Proizvod">
-                <div class="ime">Naziv</div>
-                <div class="kategorija">Kategorija</div>
+                <img src="images/hodanje/adidas-daily-30.png" alt="Proizvod">
+                <div class="cart_hov">
+                    <img src="images/shopping-cart-icon64.png" alt="">
+                </div>
+                <div class="dot">1</div>
+                <div class="ime">Patika za hodanje</div>
+                <div class="kategorija">Hodanje</div>
             </div>
         </div>
     </div>
@@ -68,6 +53,6 @@
         </ul>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/visuals.js"></script>
 </body>
 </html>

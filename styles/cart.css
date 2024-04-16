@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Zaglavlje */
+header {
+    margin: 0;
+    padding-left: 3vw;
+    padding-right: 4vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+}
+
+#kategorija_head {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+#logo>img {
+    width: 80px;
+}
+
+#cart>a {
+    display: flex;
+    align-items: center;
+}
+
+#cart img {
+    width: 40px;
+    margin: 5px;
+}
+
+#cart a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 1024px){
+    .dot_sum {
+        position: absolute;
+        transform: translate(160%, 70%);
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        font-size: 10px;
+        border-radius: 50%;
+        text-align: center;
+        background: crimson;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .dot_sum {
+        position: absolute;
+        transform: translate(160%, 70%);
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        border-radius: 50%;
+        text-align: center;
+        background: crimson;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        margin: 0;
+        padding: 0;
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+    #kategorija_head {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+        font-weight: 500;
+    }
+    
+    #logo>img {
+        padding-left: 3vw;
+        padding-right: 3vw;
+        width: 60px;
+    }
+    
+    #cart>a {
+        display: flex;
+        align-items: center;
+    }
+    
+    #cart img {
+        width: 30px;
+        margin: 5px;
+    }
+    
+    #cart a {
+        padding-right: 4vw;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+/* Sadrzaj */
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    border: solid 1px;
+}
+
+#kosarica {
+    display: flex;
+    justify-content: center;
+}
+
+#proizvodi {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 20px 20px 20px 20px;
+    border: solid 1px;
+}
+
+.proizvod {
+    text-align: center;
+    flex-basis: 50%;
+}
+
+hr {
+    margin: 10px 0 10px 0;
+    flex-basis: 100%;
+}
+
+.kolicina {
+    text-align: center;
+    flex-basis: 50%;
+}
