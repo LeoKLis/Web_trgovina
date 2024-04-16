@@ -21,6 +21,10 @@ header {
     font-weight: 500;
 }
 
+#logo {
+    cursor: pointer;
+}
+
 #logo>img {
     width: 80px;
 }
@@ -41,6 +45,7 @@ header {
     color: inherit;
 }
 
+/* Crvena tockica na kosarici */
 @media screen and (max-width: 1024px){
     .dot_sum {
         position: absolute;
@@ -125,13 +130,12 @@ header {
     }
 
     nav#top_nav img#hamburger {
-        margin: 3px 0 3px 0;
-        padding: 0 10px 0 10px;
+        margin: 5px 0px 3px 0;
+        padding: 0 15px 0 15px;
         position: relative;
         left: 100%;
         transform: translate(-100%, 0%);
-        width: 30px;
-        height: 30px;
+        height: 25px;
     }
 
     nav>ul {
@@ -153,9 +157,16 @@ header {
     nav>ul>li:last-child {
         border-bottom: none;
     }
-    
-    nav>ul>li:hover {
+
+    .search {
+        position: absolute;
+        left: 15px;
+        top: 8px;
         cursor: pointer;
+    }
+
+    .search>img {
+        width: 20px;
     }
 }
 
@@ -187,6 +198,17 @@ header {
     nav>ul>li:hover {
         cursor: pointer;
     }
+
+    .search {
+        position: absolute;
+        left: 15px;
+        top: 95px;
+        cursor: pointer;
+    }
+
+    .search>img {
+        width: 25px;
+    }
 }
 
 /* Navigacija veliki zasloni */
@@ -217,6 +239,17 @@ header {
     
     nav>ul>li:hover {
         cursor: pointer;
+    }
+
+    .search {
+        position: absolute;
+        left: 15px;
+        top: 95px;
+        cursor: pointer;
+    }
+
+    .search>img {
+        width: 25px;
     }
 }
 

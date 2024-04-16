@@ -2,6 +2,8 @@ import { data } from "./data.js";
 
 let proizvodi = document.getElementById("proizvodi");
 
+document.getElementById("logo").addEventListener("click", function() { window.location.href = "index.html" })
+
 if (sumTotal() == 0){
     document.getElementsByClassName("dot_sum")[0].style.display = "none";
 }
@@ -116,7 +118,7 @@ function appendProducts() {
         
         let proizvod = document.createElement("div");
         proizvod.className = "proizvod";
-        proizvod.innerHTML = getProductName(named)
+        proizvod.innerHTML = localStorage.key(i).split("-")[0]
         proizvodi.appendChild(proizvod);
 
         let kol = document.createElement("div");
@@ -138,18 +140,5 @@ function appendProducts() {
         btnmax.addEventListener("click", function(){
             increaseAmount(named, kol)
         })
-    }
-}
-
-
-
-
-function getProductName(named){
-    for(const i of data.categories){
-        if (i.name == named.substr(1)){
-            for(const j of i.products){
-                console.log(j[0].name)//stao
-            }
-        }
     }
 }

@@ -22,7 +22,11 @@ header {
     font-weight: 500;
 }
 
-#logo>a>img {
+#logo {
+    cursor: pointer;
+}
+
+#logo>img {
     width: 80px;
 }
 
@@ -42,7 +46,7 @@ header {
     color: inherit;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     .dot_sum {
         position: absolute;
         transform: translate(160%, 70%);
@@ -57,7 +61,7 @@ header {
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     .dot_sum {
         position: absolute;
         transform: translate(160%, 70%);
@@ -72,40 +76,40 @@ header {
     }
 }
 
+/* Zaglavlje */
 @media screen and (max-width: 1024px) {
     header {
         margin: 0;
         padding: 0;
-        
+
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
     }
 
-    
+
     #kategorija_head {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: large;
         font-weight: 500;
     }
-    
+
     #logo>img {
-        padding-left: 3vw;
-        padding-right: 3vw;
-        width: 60px;
+        margin-left: 5px;
+        width: 50px;
     }
-    
+
     #cart>a {
         display: flex;
         align-items: center;
     }
-    
+
     #cart img {
         width: 30px;
         margin: 5px;
     }
-    
+
     #cart a {
         padding-right: 4vw;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -115,77 +119,161 @@ header {
 }
 
 /* Sadrzaj */
-#content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-    padding: 10px;
-    border: solid 1px;
+@media screen and (max-width: 1024px){
+    #content {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px;
+        padding: 2px;
+        border: solid 1px;
+    }
+
+    #kosarica {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 10px 0;
+    }
+
+    #proizvodi {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        padding: 20px 10px 20px 10px;
+        border: solid 1px;
+    }
+
+    .proizvod {
+        text-align: center;
+        flex-basis: 50%;
+    }
+
+    hr {
+        margin: 10px 0 10px 0;
+        flex-basis: 100%;
+    }
+
+    .kolicina {
+        text-align: center;
+        flex-basis: 50%;
+    }
+
+    .btnmin {
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    
+        margin-right: 15px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        border-radius: 50%;
+        text-align: center;
+        background: rgb(110, 110, 110);
+        color: white;
+    }
+    
+    .btnmax {
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    
+        margin-left: 15px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        border-radius: 50%;
+        text-align: center;
+        background: rgb(110, 110, 110);
+        color: white;
+    }
 }
 
-#kosarica {
-    display: flex;
-    justify-content: center;
-}
+@media screen and (min-width: 1024px){
+    #content {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flex;
+        font-size: larger;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
+        padding: 10px;
+        border: solid 1px;
+    }
 
-#proizvodi {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    padding: 20px 20px 20px 20px;
-    border: solid 1px;
-}
+    #kosarica {
+        display: flex;
+        justify-content: center;
+    }
 
-.proizvod {
-    text-align: center;
-    flex-basis: 50%;
-}
+    #proizvodi {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        padding: 40px 20px 40px 20px;
+        border: solid 1px;
+    }
 
-hr {
-    margin: 10px 0 10px 0;
-    flex-basis: 100%;
-}
+    .proizvod {
+        text-align: center;
+        flex-basis: 50%;
+    }
 
-.kolicina {
-    text-align: center;
-    flex-basis: 50%;
-}
+    hr {
+        margin: 10px 0 10px 0;
+        flex-basis: 100%;
+    }
 
-.btnmin {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    .kolicina {
+        text-align: center;
+        flex-basis: 50%;
+    }
 
-    margin-right: 5px;
-    width: 15px;
-    height: 15px;
-    line-height: 15px;
-    border-radius: 50%;
-    text-align: center;
-    background: rgb(110, 110, 110);
-    color: white;
-}
-
-.btnmax {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
-    margin-left: 5px;
-    width: 15px;
-    height: 15px;
-    line-height: 15px;
-    border-radius: 50%;
-    text-align: center;
-    background: rgb(110, 110, 110);
-    color: white;
+    .btnmin {
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    
+        margin-right: 22px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 20px;
+        border-radius: 50%;
+        text-align: center;
+        background: rgb(110, 110, 110);
+        color: white;
+    }
+    
+    .btnmax {
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    
+        margin-left: 22px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 20px;
+        border-radius: 50%;
+        text-align: center;
+        background: rgb(110, 110, 110);
+        color: white;
+    }
 }

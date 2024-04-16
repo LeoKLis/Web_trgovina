@@ -47,14 +47,14 @@ function fetchCategoryData(categoryName){
     }
 }
 
-function addToCart(i, categoryName){
-    console.log(i+categoryName)
-    if(localStorage.getItem(i+categoryName) == null){
-        localStorage.setItem(i+categoryName, 1);
+function addToCart(name, categoryName){
+    console.log(name+"-"+categoryName)
+    if(localStorage.getItem(name+"-"+categoryName) == null){
+        localStorage.setItem(name+"-"+categoryName, 1);
     }
     else{
-        let val = localStorage.getItem(i+categoryName);
-        localStorage.setItem(i+categoryName, parseInt(val) + 1);
+        let val = localStorage.getItem(name+"-"+categoryName);
+        localStorage.setItem(name+"-"+categoryName, parseInt(val) + 1);
     }
 }
 
@@ -89,20 +89,20 @@ function createCard(products, i, categoryName){
     card.appendChild(cart_hov);
 
     cart_hov.addEventListener("click", function() {
-        addToCart(i, categoryName);
+        addToCart(products[i].name, categoryName);
         dot.style.display = "block";
-        dot.innerHTML = localStorage.getItem(i+categoryName);
+        dot.innerHTML = localStorage.getItem(products[i].name+"-"+categoryName);
         document.getElementsByClassName("dot_sum")[0].style.display = "block";
         document.getElementsByClassName("dot_sum")[0].innerHTML = sumTotal();
     });
 
     let dot = document.createElement("div");
     dot.className = "dot";
-    if(localStorage.getItem(i+categoryName) == null){
+    if(localStorage.getItem(products[i].name+"-"+categoryName) == null){
         dot.style.display = "none";
     }
     else{
-        dot.innerHTML = localStorage.getItem(i+categoryName)
+        dot.innerHTML = localStorage.getItem(products[i].name+"-"+categoryName)
     }
     card.appendChild(dot)
 
