@@ -90,8 +90,9 @@ function createCard(products, i, categoryName){
 
     cart_hov.addEventListener("click", function() {
         addToCart(i, categoryName);
-        dot.style.display = "block"
-        dot.innerHTML = localStorage.getItem(i+categoryName)
+        dot.style.display = "block";
+        dot.innerHTML = localStorage.getItem(i+categoryName);
+        document.getElementsByClassName("dot_sum")[0].style.display = "block";
         document.getElementsByClassName("dot_sum")[0].innerHTML = sumTotal();
     });
 

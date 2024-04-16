@@ -22,7 +22,7 @@ header {
     font-weight: 500;
 }
 
-#logo>img {
+#logo>a>img {
     width: 80px;
 }
 
@@ -150,4 +150,42 @@ hr {
 .kolicina {
     text-align: center;
     flex-basis: 50%;
+}
+
+.btnmin {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgb(110, 110, 110);
+    color: white;
+}
+
+.btnmax {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgb(110, 110, 110);
+    color: white;
 }
