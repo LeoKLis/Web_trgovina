@@ -1,5 +1,3 @@
-import { data } from "./data.js";
-
 let proizvodi = document.getElementById("proizvodi");
 
 document.getElementById("logo").addEventListener("click", function() { window.location.href = "index.html" })

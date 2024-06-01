@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="module" src="/scripts/script.js"></script>
+    <script type="module" src="/scripts/index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
@@ -14,18 +14,11 @@
         <div id="cart"><a href="cart"><img src="/images/shopping-cart-icon64.png"alt="Shopping cart icon">Kosarica<div class="dot_sum"></div></a></div>
     </header>
     <nav id="top_nav">
-        <img id="hamburger" src="/images/icons8-hamburger-menu-50.png" alt="Hamburger meni" onclick="show_nav()">
+        <img id="hamburger" src="/images/icons8-hamburger-menu-50.png" alt="Hamburger meni">
         <ul id="nav_links">
-            <li id="slobVr">Slobodno vrijeme</li>
-            <li id="trc">Trcanje</li>
-            <li id="hod">Hodanje</li>
-            <li id="nog">Nogomet</li>
-            <li id="fut">Futsal</li>
-            <li id="kos">Kosarka</li>
-            <li id="ten">Tenis</li>
-            <li id="ruk">Rukomet</li>
-            <li id="odb">Odbojka</li>
-            <li id="boks">Boks</li>
+            <% for(el of categories) { %>
+                <li class="kategorija"><%= el.name %></li>
+            <% } %>
         </ul>
         <div class="search">
             <img src="/images/search-icon.png" alt="ikona pretrazivanja">
@@ -38,6 +31,7 @@
         </div>
         <div id="proizvodi">
             <!-- Proizvodi -->
+            <%  %>
         </div>
     </div>
     <footer>
@@ -47,7 +41,5 @@
             <li>Pretplati se</li>
         </ul>
     </footer>
-
-    <script src="/scripts/visuals.js"></script>
 </body>
 </html>

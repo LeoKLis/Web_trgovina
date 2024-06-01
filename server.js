@@ -4,6 +4,7 @@ const path = require('path')
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.json());
 
 const indexRouter = require('./routes/index.routes');
 const cartRouter = require('./routes/cart.routes');
