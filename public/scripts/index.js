@@ -1,27 +1,56 @@
+let aktivnaKategorija;
+const fetchCategoryReq = new XMLHttpRequest();
+let categoryReq = new XMLHttpRequest();
+const categoryFrame = document.getElementById('nav_links');
+fetchCategoryReq.open('GET', '/home/getCategories');
+fetchCategoryReq.send();
+fetchCategoryReq.responseType = 'json';
+fetchCategoryReq.onload = () => {
+    console.log('hello?');
+    const jsonContents = fetchCategoryReq.response;
+    aktivnaKategorija = jsonContents.activeCategory;
+    for(const [key, value] of Object.entries(jsonContents.categories)) {
+        console.log('hello?');
+        let kategorija = document.createElement('li');
+        kategorija.className = 'kategorija';
+        kategorija.innerHTML = value;
+        categoryFrame.appendChild(kategorija);
 
-// Zamjena kategorije sa GET
-const categoryReq = new XMLHttpRequest();
-const category = document.querySelectorAll('.kategorija');
-category.forEach((element, index) => {
-    element.addEventListener('click', () => {
-        categoryReq.open('GET', `/home/getProducts/${index}`);
-        categoryReq.send();
-        categoryReq.responseType = 'json';
-        categoryReq.onload = () => {
-            if(categoryReq.readyState == 4 && categoryReq.status == 200){
+        kategorija.addEventListener('click', () => {
+            categoryReq.open('GET', `/home/getProducts/${key}`);
+            categoryReq.send();
+            categoryReq.responseType = 'json';
+            categoryReq.onload = () => {
                 let jsonContents = categoryReq.response;
-                document.getElementById('kategorija_head').innerHTML = jsonContents.name.toUpperCase();
+                document.getElementById('kategorija_head').innerHTML = jsonContents.data.name.toUpperCase();
                 document.getElementById('proizvodi').innerHTML = '';
-                jsonContents.products.forEach((element) => {
-                    createCard(element, jsonContents.name);
+                jsonContents.data.products.forEach((element) => {
+                    createCard(element, jsonContents.data, jsonContents.cart);
                 });
             }
-            else {
-                console.log(`Error: ${categoryReq.status}`);
-            }
+        });
+    }
+}
+
+let dotArr = document.querySelectorAll('.dot');
+const product = document.querySelectorAll('.cart_hov');
+product.forEach((element, index) => {
+    element.addEventListener('click', () => {
+        // Kod za server (dodavanje u kosaricu)
+        const productReq = new XMLHttpRequest();
+        productReq.open('GET', `/cart/add/${index + "_" + aktivnaKategorija}`);
+        productReq.send();
+        productReq.responseType = 'json';
+        productReq.onload = () => {
+            console.log(productReq.response);
+            dotArr[index].style.display = 'block';
+            dotArr[index].innerHTML = productReq.response.productTotal;
+            let dot_sum = document.getElementById('dot_sum');
+            dot_sum.style.display = 'block';
+            dot_sum.innerHTML = productReq.response.cartTotal;
         }
     })
-});
+})
 
 // Funkcionalnost hamburger menija
 document.getElementById('hamburger').addEventListener('click', () => {
@@ -41,7 +70,8 @@ window.addEventListener('resize', () => {
     }
 })
 
-function createCard(product, categoryName){
+// Izrada kartica
+function createCard(product, category, cart){
     let card = document.createElement('div');
     card.className = 'kartica';
     
@@ -50,21 +80,34 @@ function createCard(product, categoryName){
     image.alt = 'slika' + product.name;
     card.appendChild(image);
 
-    let cart_hov = document.createElement('div');
-    cart_hov.className = 'cart_hov';
+    let cart_hover = document.createElement('div');
+    cart_hover.className = 'cart_hov';
     let icn = document.createElement('img');
     icn.src = 'images/shopping-cart-icon64.png';
     icn.alt = 'Cart icon';
-    cart_hov.appendChild(icn);
-    card.appendChild(cart_hov);
+    cart_hover.appendChild(icn);
+    card.appendChild(cart_hover);
 
     let dot = document.createElement('div');
-    dot.style.display = 'none';
-    dot.className = 'dot';
+    dot.className = 'dot' 
+    dot.className += cart[product.id + "_" + category.id] !== undefined ? ' show' : ' no_show';
+    dot.innerHTML = cart[product.id + "_" + category.id];
     card.appendChild(dot);
 
-    cart_hov.addEventListener('click', function() {
+    cart_hover.addEventListener('click', () => {
         // Kod za server (dodavanje u kosaricu)
+        const productReq = new XMLHttpRequest();
+        productReq.open('GET', `/cart/add/${product.id + "_" + category.id}`);
+        productReq.send();
+        productReq.responseType = 'json';
+        productReq.onload = () => {
+            console.log(productReq.response);
+            dot.style.display = 'block';
+            dot.innerHTML = productReq.response.productTotal;
+            let dot_sum = document.getElementById('dot_sum');
+            dot_sum.style.display = 'block';
+            dot_sum.innerHTML = productReq.response.cartTotal;
+        }
     });
 
     let ime = document.createElement('div');
@@ -74,7 +117,7 @@ function createCard(product, categoryName){
 
     let kateg = document.createElement('div');
     kateg.className = 'kategorija';
-    kateg.innerHTML = categoryName;
+    kateg.innerHTML = category.name;
     card.appendChild(kateg);
 
     document.getElementById('proizvodi').appendChild(card);

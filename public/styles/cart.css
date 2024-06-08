@@ -46,8 +46,15 @@ header {
     color: inherit;
 }
 
+.show {
+    display: block;
+}
+.no_show {
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
-    .dot_sum {
+    #dot_sum {
         position: absolute;
         transform: translate(160%, 70%);
         width: 15px;
@@ -62,7 +69,7 @@ header {
 }
 
 @media screen and (min-width: 1024px) {
-    .dot_sum {
+    #dot_sum {
         position: absolute;
         transform: translate(160%, 70%);
         width: 20px;
@@ -137,12 +144,20 @@ header {
         margin: 15px 0 10px 0;
     }
 
-    #proizvodi {
+    #proizvodi-okvir {
         display: flex;
         flex-wrap: wrap;
         margin: 10px;
         padding: 20px 10px 20px 10px;
         border: solid 1px;
+    }
+
+    #proizvodi {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 10px;
+        padding: 20px 10px 20px 10px;
     }
 
     .proizvod {
@@ -216,12 +231,19 @@ header {
         justify-content: center;
     }
 
+    #proizvodi-okvir {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        padding: 20px 10px 20px 10px;
+        border: solid 1px;
+    }
+
     #proizvodi {
         display: flex;
         flex-wrap: wrap;
-        margin: 20px;
+        width: 100%;
         padding: 40px 20px 40px 20px;
-        border: solid 1px;
     }
 
     .proizvod {

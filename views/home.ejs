@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="/scripts/index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <title>Labos1 - Leonardo Klisanic</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs'); %>
+    <nav id="top_nav">
+        <img id="hamburger" src="/images/icons8-hamburger-menu-50.png" alt="Hamburger meni">
+        <ul id="nav_links"></ul>
+        <div class="search">
+            <img src="/images/search-icon.png" alt="ikona pretrazivanja">
+        </div>
+    </nav>
+    <div id="sadrzaj">
+        <div id="transparent">
+            <img src="/images/pexels-ray-piedra-1476209.jpg" alt="Transparent slika">
+            <div id="pozdrav">Dobrodosli</div>
+        </div>
+        <div id="proizvodi">
+                <% for(el of data.categories[activeCategoryId].products) {%>
+                    <div class="kartica">
+                        <img src="<%= el.image %>" alt="slika<%= el.name %>">
+                        <div class="cart_hov">
+                            <img src="images/shopping-cart-icon64.png" alt="Cart icon">
+                        </div>
+                        <div class="dot <%= cart[el.id + "_" + activeCategoryId] !== undefined ? 'show' : 'no_show'; %>"><%= cart[el.id + "_" + activeCategoryId] %></div>
+                        <div class="ime"><%= el.name %></div>
+                        <div class="kategorija"><%= data.categories[activeCategoryId].name %></div>
+                    </div>
+                <% } %>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs'); %>
+</body>
+</html>
